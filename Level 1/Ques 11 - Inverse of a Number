@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+  // write your code here  
+
+  Scanner scn = new Scanner(System.in);
+  int n = scn.nextInt();
+
+  int faceVal = 1;
+  int ans = 0;
+
+  while(n > 0)
+  {
+      int dig = n % 10;
+      int power = 1;
+
+      for(int i = 1; i < dig; i++)
+      {
+          power *= 10;
+      }
+
+      ans += faceVal * power;
+
+      faceVal++;
+      n /= 10;
+  }
+
+  System.out.println(ans);
+
+ }
+}
