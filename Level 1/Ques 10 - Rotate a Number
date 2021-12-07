@@ -1,0 +1,45 @@
+import java.util.*;
+   
+   public class Main{
+   
+   public static void main(String[] args) {
+     // write your code here 
+
+     Scanner scn = new Scanner(System.in);
+     int n = scn.nextInt();
+     int k = scn.nextInt();
+
+     int temp = n;
+     int nod = 0;
+
+     while(temp > 0){
+         nod++;
+         temp /= 10;
+     }
+
+     k = k % nod;
+     if(k < 0){
+         k = k + nod;
+     }
+
+     int div = 1;
+     int multiplier = 1;
+
+     for(int i = 1; i <= k; i++)
+     {
+         div *= 10;
+     }
+
+     for(int i = 1; i <= nod-k; i++){
+         multiplier *= 10;
+     }
+
+     int rem = n % div;
+     int quo = n / div;
+     int ans = 0;
+     ans += (rem * multiplier) + quo;
+
+     System.out.println(ans);
+
+    }
+   }
