@@ -1,0 +1,33 @@
+import java.util.*;
+    
+    public class Main{
+    
+    public static void main(String[] args) {
+      // write your code here  
+      
+      Scanner scn = new Scanner(System.in);
+      int n = scn.nextInt();
+
+      int numDigits = 0;
+      int temp = n;
+
+      while(temp > 0){
+          temp /= 10;
+          numDigits++;
+      }
+      
+      int div = 1;
+
+      for(int i = 1; i < numDigits; i++){
+          div *= 10;
+      }
+
+      while(div > 0){
+          int rem = n / div;
+          System.out.println(rem);
+          n = n % div;
+          div /= 10;
+      }
+
+     }
+    }
