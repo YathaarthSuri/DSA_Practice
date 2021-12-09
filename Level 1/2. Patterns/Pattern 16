@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+
+     // write ur code here
+
+     int n = scn.nextInt();
+
+     int nst = 1;
+     int nsp = 2*n - 3;
+     int val = 1;
+
+     for(int i = 1; i <= n; i++)
+     {
+
+         val = 1;
+
+         for(int j = 1; j <= nst; j++)
+         {
+             System.out.print(val + "\t");
+             val++;
+         }
+
+         for(int j = 1; j <= nsp; j++)
+            System.out.print("\t");
+
+         if(i == n){
+            val--;
+            nst--;
+         }
+
+
+         for(int j = 1; j <= nst; j++)
+         {
+             val--;
+             System.out.print(val + "\t");
+         }
+
+         System.out.println();
+
+         nsp -= 2;
+         nst++;
+     }
+
+ }
+}
