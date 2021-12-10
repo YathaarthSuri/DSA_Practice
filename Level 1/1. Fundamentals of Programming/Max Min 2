@@ -1,0 +1,73 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+
+      Scanner scn = new Scanner(System.in);
+
+      int n = scn.nextInt();
+      int[] arr = new int[n];
+
+      for(int i = 0; i < n; i++){
+          arr[i] = scn.nextInt();
+      }
+
+      int second_max = giveMeMax(n, arr);
+      int second_min = giveMeMin(n, arr);
+
+      System.out.print(second_max + " " + second_min);
+      
+  }
+
+  public static int giveMeMax(int n, int[] arr)
+  {
+      int first1 = Integer.MIN_VALUE;
+      int second1 = 0;
+
+      for(int i = 0; i < n; i++)
+      {
+          if(arr[i] > first1)
+          {
+              second1 = first1;
+              first1 = arr[i];
+          }
+          else if(arr[i] > second1 && arr[i] != first1)
+          {
+              second1 = arr[i];
+          }
+      }
+
+      return second1;
+  }
+
+  public static int giveMeMin(int n, int[] arr)
+  {
+      int first = Integer.MAX_VALUE;
+      int second = 0;
+
+      for(int i = 0; i < n; i++)
+      {
+          if(arr[i] < first)
+          {
+              second = first;
+              first = arr[i];
+          }
+          else if(arr[i] < second && arr[i] != first)
+          {
+              second = arr[i];
+          }
+      }
+
+      return second;
+
+  }
+
+}
+
+// above is the most optimal solution
+
+// other ways include
+//1) Sorting and then finding second largest (Brute Force)
+//2) Traversing array twice (Better Solution)
