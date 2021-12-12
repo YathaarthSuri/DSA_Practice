@@ -1,0 +1,61 @@
+import java.util.*;
+  
+  public class Main{
+  
+  public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      int n = scn.nextInt();
+      int sourceBase = scn.nextInt();
+     int  destBase= scn.nextInt();
+
+     int x = sourceToDecimal(n, sourceBase);
+     int ans = decimalToDest(x, destBase);
+
+     System.out.print(ans);
+   }   
+
+   public static int sourceToDecimal(int n, int source){
+
+       int power = 1;
+       int ans = 0;
+
+       while(n > 0)
+       {
+           int digit = n % 10;
+           int quo = n / 10;
+
+           ans += digit * power;
+
+           power *= source;
+
+           n = quo;
+       }
+
+       return ans;
+   }
+
+   public static int decimalToDest(int n, int dest){
+
+       int power = 1;
+       int ans = 0;
+
+       while(n > 0)
+       {
+           int digit = n % dest;
+           int quo = n / dest;
+
+           ans += digit * power;
+
+           power *= 10;
+
+           n = quo;
+       }
+
+       return ans;
+   }
+
+
+
+
+
+  }
