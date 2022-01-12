@@ -23,8 +23,9 @@ public static void main(String[] args) throws Exception {
         if(arr[i] > max)
             max = arr[i];
 
-        else if(arr[i] < min)
+        if(arr[i] < min)
             min = arr[i];
+        // If we use else if in above then a test case will not work which is (strictly increasing array)
     }
 
     int span = max - min;
