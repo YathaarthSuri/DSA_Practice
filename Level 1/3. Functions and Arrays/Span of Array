@@ -28,7 +28,7 @@ public static void main(String[] args) throws Exception {
         // If we use else if in above then a test case will not work which is (strictly increasing array and array whose size = 1)
     }
 
-    int span = max - min;
+    int span = max-min;
 
     System.out.print(span);
 
