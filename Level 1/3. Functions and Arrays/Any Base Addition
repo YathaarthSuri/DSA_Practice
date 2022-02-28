@@ -13,7 +13,7 @@ import java.util.*;
    }
   
    public static int getSum(int b, int n1, int n2){
-       // write ur code here
+       
 
        int power = 1;
        int carry = 0;
