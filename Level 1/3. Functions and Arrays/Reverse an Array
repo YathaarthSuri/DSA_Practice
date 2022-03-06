@@ -12,7 +12,7 @@ public class Main{
   }
 
   public static void reverse(int[] a){
-    // write your code here
+    
     int low = 0;
     int high = a.length - 1;
     
